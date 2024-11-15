@@ -1,0 +1,20 @@
+# 配置文件
+config/config.yaml
+config/*.private.yaml
+
+# 日志文件
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db

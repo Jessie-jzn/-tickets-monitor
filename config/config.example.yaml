@@ -1,0 +1,66 @@
+# 邮件配置
+email:
+  smtp_server: "smtp.example.com"  # SMTP服务器地址
+  smtp_port: 587  # SMTP端口
+  sender: "your_email@example.com"  # 发件人邮箱
+  password: "your_password"  # 邮箱密码（建议使用应用专用密码）
+  receivers:  # 收件人邮箱列表
+    - "receiver1@example.com"
+    - "receiver2@example.com"
+
+# 监控配置
+monitor:
+  interval: 60  # 监控间隔（秒）
+  retry_times: 3  # 请求失败重试次数
+  timeout: 10  # 请求超时时间（秒）
+  error_wait_time: 300  # 错误后等待时间（秒）
+  max_errors: 5  # 最大连续错误次数
+
+# LiveLab配置
+livelab:
+  project_id: ""  # 项目ID
+  authorization: ""  # Bearer token，需要定期更新
+  target_prices: [355]  # 目标票价列表
+  target_dates: ["2024-11-23"]  # 目标日期列表
+  contact:  # 联系人信息
+    name: ""  # 姓名
+    phone: ""  # 手机号
+  frequent_ids: []  # 常用购票人ID列表
+
+# 猫眼配置
+maoyan:
+  shows:  # 要监控的演唱会列表
+    - name: "演唱会1"  # 演唱会名称
+      show_id: ""  # 演出ID
+      project_id: ""  # 项目ID
+      target_prices: [380]  # 目标票价列表
+    - name: "演唱会2"
+      show_id: ""
+      project_id: ""
+      target_prices: [580]
+  city_id: "10"  # 城市ID
+  token: ""  # 认证token，需要定期更新
+  mtgsig: ""  # mtgsig签名，需要定期更新
+  uuid: ""  # 设备UUID
+
+# User-Agent配置
+user_agents:  # User-Agent列表，随机使用
+  - "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.53(0x18003530) NetType/WIFI Language/zh_CN"
+  - "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.52(0x18003429) NetType/4G Language/zh_CN"
+
+# 代理配置
+proxy:
+  enabled: false  # 是否启用代理
+  proxy_api: ""  # 代理API地址
+  proxy_timeout: 5  # 代理超时时间（秒）
+
+# 目标配置
+targets:
+  livelab:
+    enabled: true  # 是否启用LiveLab监控
+    urls:
+      - "https://www.example.com/event/xxx"  # 监控URL列表
+  maoyan:
+    enabled: true  # 是否启用猫眼监控
+    urls:
+      - "https://www.example.com/show/xxx"  # 监控URL列表 
